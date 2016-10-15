@@ -1,2 +1,20 @@
-.DS_Store
+# ===== GLOBAL =====
 
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+*.scssc
+*.log
+tmp/
+.sass-cache/
+bower_components/
+node_modules/
+
+# ===== ASSETS =====
+
+.codekit-cache/
+config.codekit

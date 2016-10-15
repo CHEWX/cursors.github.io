@@ -1,0 +1,88 @@
+// Clear after floats
+@mixin clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Apply clearfix to this classes by default
+.clearfix, .group {
+	@include clearfix;
+}
+
+// Responsive mixins
+@mixin custom-breakpoint($max, $min: $w-min) {
+    @media (min-width: $min) and (max-width: $max) {
+    	@content;
+    }
+}
+
+@mixin heightpoint($max) {
+    @media (min-height: 0px ) and (max-height: $max) {
+        @content;
+    }
+}
+
+@mixin mobilefirst($res) {
+    @media screen and (min-width: $res) {
+        @content;
+    }
+}
+
+// Rem font-size PX fallback
+@mixin rem($sizeValue: 1.6) {
+    // Fallback
+    font-size: ($sizeValue * 10) + px;
+    font-size: rem-calc(($sizeValue * 10));
+}
+// USAGE - @include rem(1.2);
+
+// REM RWD using maps
+@mixin rem-rwd($fs-map, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint == null {
+            @include rem( $fs-font-size );
+        }
+        @else {
+            @include breakpoint( $fs-breakpoint down ) {
+                @include rem( $fs-font-size );
+            }
+        }
+    }
+}
+// USAGE - @include rem-rwd($fs-body);
+
+// Cross-browser opacity
+@mixin opacity($opacity, $ie-support:true) {
+
+	@if $ie-support == true {
+
+		filter: alpha(opacity=($opacity * 100));
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+		opacity: $opacity;
+
+	} @else {
+
+		opacity: $opacity;
+
+	}
+}
+// USAGE - @include opacity(1);
+
+// RGBA Mixin with fallback
+@mixin rgba($attr, $color, $background) {
+	$percent: alpha($color) * 100%;
+	$opaque: opacify($color, 1);
+	$solid-color: mix($opaque, $background, $percent);
+	#{$attr}: $solid-color;
+	#{$attr}: $color;
+}
+// USAGE - @include rgba('background-color', rgba(#000, 0.5), #000);
+

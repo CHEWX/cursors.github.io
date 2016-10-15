@@ -1,0 +1,10 @@
+// Text links
+a {
+
+	color: $primary-color;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
