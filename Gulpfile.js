@@ -98,7 +98,7 @@ gulp.task('sprites', ['svg'], function () {
 gulp.task('sync', function() {
     browserSync.init({
         open: false,
-        proxy: "sitename.dev"
+        // proxy: "sitename.dev"
     });
 });
 

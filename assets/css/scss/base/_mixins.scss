@@ -12,11 +12,6 @@
 	}
 }
 
-// Apply clearfix to this classes by default
-.clearfix, .group {
-	@include clearfix;
-}
-
 // Responsive mixins
 @mixin custom-breakpoint($max, $min: $w-min) {
     @media (min-width: $min) and (max-width: $max) {
@@ -58,31 +53,3 @@
     }
 }
 // USAGE - @include rem-rwd($fs-body);
-
-// Cross-browser opacity
-@mixin opacity($opacity, $ie-support:true) {
-
-	@if $ie-support == true {
-
-		filter: alpha(opacity=($opacity * 100));
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
-		opacity: $opacity;
-
-	} @else {
-
-		opacity: $opacity;
-
-	}
-}
-// USAGE - @include opacity(1);
-
-// RGBA Mixin with fallback
-@mixin rgba($attr, $color, $background) {
-	$percent: alpha($color) * 100%;
-	$opaque: opacify($color, 1);
-	$solid-color: mix($opaque, $background, $percent);
-	#{$attr}: $solid-color;
-	#{$attr}: $color;
-}
-// USAGE - @include rgba('background-color', rgba(#000, 0.5), #000);
-

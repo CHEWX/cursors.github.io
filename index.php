@@ -27,24 +27,71 @@
 
 	<main class="l-main">
 		<!-- content -->
+
+		<?php
+			// change dir to whatever - if only one page then you can remove $page
+			$directory = 'assets/img/';
+			if(is_dir($directory)) {
+			    // Check if the directory exists
+			    if($handle = opendir($directory)) {
+			        // Check if its able to open the directory
+			        $images = array();
+			        // Loop through files
+			        while(false !== ($entry = readdir($handle))) {
+			            if($entry != "." && $entry != ".." && $entry != ".DS_Store") {
+
+							// Strip extention
+			                $cursor_sans_ext = strstr($entry, '.', true);
+
+			                // If the file exists store it in array
+			                // Build the full file path
+			                $images[ $cursor_sans_ext ] = '/' . $directory . $entry;
+
+			            }
+			        }
+			        // Close directory and sort array
+			        closedir($handle);
+
+			        // Set images as cursors
+			        $cursors = $images;
+
+			    }
+			}
+
+		?>
+
+		<ul class="cursors">
+			<?php foreach( $cursors as $cursor => $cursor_path ) { ?>
+				<li class="c-item c-item--<?php echo $cursor; ?>"><img src="<?php echo $cursor_path; ?>" alt="<?php echo $cursor; ?>"></li>
+			<?php } ?>
+		</ul>
+
 	</main>
 
 	<footer class="l-footer">
 
+		<div class="container">
+			<div class="row">
+				<div class="col col--2-4">
+					<p>
+						cursors.github.io is a list of your local computers cursors for use on the web. A trend that saves needless HTTP requests to symbolise an item. Make use of the computer.
+					</p>
+				</div>
+				<div class="col col--1-4 col--last">
+					<p>
+						To contribute visit <a href="http://www.github.com/CHEWX/cursors.github.io" target="_blank">github</a>
+					</p>
+					<p>
+						<a href="https://twitter.com/intent/tweet?text=A visual list of CSS Cursors - &url=https://cursors.github.io&via=CHEWX">Tweet</a> this.
+					</p>
+				</div>
+			</div>
+		</div>
 
 	</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="assets/js/jquery/dist/jquery.min.js"><\/script>')</script>
-
-	<?php if( strstr( $_SERVER['HTTP_HOST'], "dev" ) != false ) { ?>
-	    <script src="assets/js/libs/modernizr/*.js"></script>
-	    <script src="assets/js/src/global.js"></script>
-	<?php } else { ?>
-		<script src="assets/js/main.js"></script>
-	<?php } ?>
-
 	<!-- Google Analytics here -->
+
 
 </body>
 </html>

@@ -1,1 +1,85 @@
 // Reusable Elements
+
+.cursors {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.c-item {
+    width: calc( 100% / 1 );
+    padding-bottom: 100%;
+    background: #eee;
+    position: relative;
+    text-align: center;
+
+    @media screen and (min-width: 400px) {
+        width: calc( 100% / 2 );
+        padding-bottom: calc(100% / 2);
+    }
+
+    @media screen and (min-width: 800px) {
+        width: calc( 100% / 3 );
+        padding-bottom: calc(100% / 3);
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: calc( 100% / 4 );
+        padding-bottom: calc(100% / 4);
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: calc( 100% / 5 );
+        padding-bottom: calc(100% / 5);
+    }
+
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        opacity: 0;
+        transition: opacity ease 100ms;
+        font-family: monospace;
+        text-align: center;
+    }
+
+    &:hover {
+        img {
+            opacity: 0;
+        }
+
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        transition: opacity ease 100ms;
+        max-width: 25px;
+        max-height: 25px;
+    }
+}
+
+
+$cursors: not-allowed copy context-menu cell vertical-text default crosshair pointer wait text help alias all-scroll col-resize e-resize w-resize ew-resize n-resize ne-resize nesw-resize ns-resize nw-resize nwse-resize s-resize se-resize sw-resize row-resize zoom-in zoom-out grabbing grab none;
+
+@each $cursor in $cursors {
+
+    .c-item--#{ $cursor } {
+        cursor: #{ $cursor };
+
+        &:before {
+            content: "cursor: #{ $cursor };" ;
+        }
+    }
+
+}

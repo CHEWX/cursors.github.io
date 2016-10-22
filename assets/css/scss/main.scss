@@ -1,51 +1,47 @@
-// Reset using Normalize
+// // Reset using Normalize
 @import "base/reset";
 
-// Import Open Sans font from Google
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-
-// Set variables and reusable mixins/animations
+// // Set variables and reusable mixins/animations
 @import "base/variables";
 @import "base/mixins";
-@import "base/animations";
+// @import "base/animations";
 
-// Import typical layout sass modules
+// // Import typical layout sass modules
 @import "layout/grid";
 @import "base/type";
-// Small re-usuable components prefixed with c-
+// // Small re-usuable components prefixed with c-
 @import "modules/components";
-@import "modules/links";
-@import "modules/tables";
-@import "modules/forms";
-// @import "modules/notifications";
-// Large re-usuable modules prefixed with m-
-@import "modules/modules";
+// @import "modules/links";
+// @import "modules/tables";
+// @import "modules/forms";
+// // @import "modules/notifications";
+// // Large re-usuable modules prefixed with m-
+// @import "modules/modules";
 
-// Use for icons
-@import "modules/icons";
+// // Use for icons
+// @import "modules/icons";
 
-// Specific project styles
-@import "layout/site";
+// // Specific project styles
+// @import "layout/site";
 
-// Main layout styles - l-header - l-footer
+// // Main layout styles - l-header - l-footer
 @import "layout/layout";
 
-// Specific page styles
-@import "layout/pages";
+// // Specific page styles
+// @import "layout/pages";
 
-// Print styles
-@import "base/print";
+// // Print styles
+// @import "base/print";
 
-// If IE support is needed
-@import "layout/ie";
+// // If IE support is needed
+// @import "layout/ie";
 
-// For anything quick and dirty that needs thrown in
-@import "layout/shame";
+// // For anything quick and dirty that needs thrown in
+// @import "layout/shame";
 
-// Now this is where you put your larger site specfic sections - keep OOCSS - credit - inuit
-@import "ui/slideshow";
-//@import "ui/wordpress";
+// // Now this is where you put your larger site specfic sections - keep OOCSS - credit - inuit
+// @import "ui/slideshow";
+// //@import "ui/wordpress";
 
-// Helper must help cascading stylesheets so add last
-@import "modules/helper";
+// // Helper must help cascading stylesheets so add last
+// @import "modules/helper";
