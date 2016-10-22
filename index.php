@@ -5,12 +5,11 @@
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title></title>
-	<meta name="description" content="">
+	<title>CSS Cursors</title>
+	<meta name="description" content="csscursors.com is a list of your local computers cursors for use on the web. A trend that saves needless HTTP requests to symbolise an item. Make use of the computer.">
 
-    <!--<link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//fast.fonts.net">-->
 
     <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -74,15 +73,15 @@
 			<div class="row">
 				<div class="col col--2-4">
 					<p>
-						cursors.github.io is a list of your local computers cursors for use on the web. A trend that saves needless HTTP requests to symbolise an item. Make use of the computer.
+						csscursors.com is a list of your local computers cursors for use on the web. A trend that saves needless HTTP requests to symbolise an item. Make use of the computer.
 					</p>
 				</div>
 				<div class="col col--1-4 col--last">
 					<p>
-						To contribute visit <a href="http://www.github.com/CHEWX/cursors.github.io" target="_blank">github</a>
+						To contribute visit <a href="http://www.github.com/CHEWX/" target="_blank">github</a>.
 					</p>
 					<p>
-						<a href="https://twitter.com/intent/tweet?text=A visual list of CSS Cursors - &url=https://cursors.github.io&via=CHEWX">Tweet</a> this.
+						<a href="https://twitter.com/intent/tweet?text=A visual list of CSS Cursors - &url=https://csscursors.com&via=CHEWX">Tweet</a> this.
 					</p>
 				</div>
 			</div>
